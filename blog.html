@@ -1,10 +1,45 @@
 <html>
     <h1> The Blog of William Kelley from Wolverinesoft Game Studio!</h1>
 
-    <h2>Devblog 2: 2/12 to 2/25</h2>
+    <h2>Devblog 3: 3/3 to 3/10</h2>
+    
+    <h3>Total Time: 12 hours</h3>
 
     <h3>Introduction</h3>
-    These 2 weeks in Wolverinesoft I was able to get actual work done, which was good. Since I was able to spend time learning Wwise in the last 2 weeks, I was able to use that knowledge to help build a few features this week that I like that i built.
+    <p>this was a shorter cycle than the others, but I was still able to refine a few things in the project and learn a few more things about Wwise.</p>
+
+    <h3>Wolverinesoft meetings: 2 hours</h3>
+    <p>This was the online Wolverinesoft meeting on 3/3.</p>
+
+    <h3>Other meetings: 1 hour</h3>
+    <p>Other than the official Wolverinesoft meetings, I had a few calls with the Audio Lead, Lea, about audio features and bugs in the game. This let me do my later work with loops and transitions since I had a few questions about who wrote each part and where some things are in the codebase/Google Drive/game.</p>
+
+    <h3>Fixing music loops in Wwise: 4 hours</h3>
+    <p>My first major task this week was to fix the fact that, in Wwise, many of the music pieces don't loop correctly. Either they had fade-ins or fade-outs in them, the ending was after one loop, or some other thing seemed like it was in the wrong place.</p> 
+    <p>The first major hurdle for this task was to get the tempo for everyone's tracks so the loops could be an integer number of beats, making everything easier. Since everyone wrote a little bit of music, I had to ask everyone what their tempo was. Also, some people aren't around anymore so I had to figure those values out, making the tempo finding process last longer.</p>
+    <p>Once I had tempos, things went pretty smoothly, but there still were a few pieces of confusion which were due to file naming or certain files not being in Wwise/Google Drive in the places I thought they were. Since I wasn't clear totally on where the things were that had to be put in the game, I asked Lea and she let me know. Also, some of the things in Wwise weren't exactly one loop of music so I had to guess where the loop was. I was able to get this done in the end though.</p>
+
+    <h3>Refining transitons between pieces: 5 hours</h3>
+    <p>My other task this week was to think more about the transitions between pieces of encounter/overworld music in the game. All the music is already in, and the music is transitioning between each other, but I had a few issues with the transitions:</p>
+    <ul>
+        <li>The audio transitions didn't line up with the visual transitions/fading in and out</li>
+        <li>All the transitions were the same crossfade, which was weird and didn't sound right</li>
+        <li>There wasn't very much intention as to how the transitions worked, just that the transitions worked at all</li>
+    </ul>
+    <p>So, I set out to make the music transitions better. My first initiative was to make the audio transitions match up with the visual transitions. This wasn't that hard, save for the fact that I had to learn how scene transitions worked and how their values were set. Luckily I found SceneTransitionManager and did fine. However, transitions in are set in code and not in the editor, so my music transitions were wrong until I found that. Now I am hoping the values for visual transitions don't change anymore so I don't have to rewrite the Wwise transitions.</p>
+    <p>The more difficult part of this task was figuring out how to add silence to the beginning of a clip in Wwise. Within Wwise, transitions happen directly between two piecces of music and there is never any silence in between. Even if you offset the piece of music you are transitioning into, it will start before the offset and you won't hear the beginning of the music you worked so hard on. My goal was to hear the beginning of things even if the music is being faded in, and for there to be silence in some transitions, especially if the screen is black for a little bit.</p>
+    <p>To solve this, I made a silent, minute long track and dragged the exit cue such that the piece exited after one second. Then, I added it to the music playlist and enabled it whenever I needed 1 second of silence, which is most places. This was the most elegant solution I found for placing silence between 2 pieces of music, though it involved copying and pasting my 1-second silent composition several times. This will let us have a high degree of customization as to how long the silence is, and ideally shouldn't be too tedious to change in the future. Once I learned how to do this I was able to set up all the transitions the way I wanted with 1 second of silence in between most of them.</p>
+    <p>Overall I like these transitions a lot more, but there is still more refining to do with the amount of silence and fade ins and stuff. I think this is a much better solution than the universal crossfade it was before.</p>
+
+
+
+    
+    <h2>Devblog 2: 2/12 to 2/25</h2>
+
+    <h3>Total Time: 24 hours</h3>
+
+    <h3>Introduction</h3>
+    <p>These 2 weeks in Wolverinesoft I was able to get actual work done, which was good. Since I was able to spend time learning Wwise in the last 2 weeks, I was able to use that knowledge to help build a few features this week that I like that i built.</p>
 
     <h3>Wolverinesoft meetings: 2 hours</h3>
     <p>There were 2 meetings in between the last devblog and this one. However, I wasn't able to go to one of them since I was out of town, so I only count for 2 hours for this blog.</p>
@@ -24,7 +59,7 @@
     <h3>Implement Various Battle Music: 9 hours</h3>
     <p>There was a lot of battle music that I did not realize was in the game. This is the list of things I added:</p>
     <ul>
-        <li>Every Hero Encounter was changed to the current castle battle music \(3 encounters\)</li>
+        <li>Every Hero Encounter was changed to the current castle battle music (3 encounters)</li>
         <li>The kid hide-and-seek music was added to the hide and seek minigame, as well as the kid fight</li>
         <li>The mob fight music in the village revisit was added to the ant fight</li>
         <li>The fungus music was added to the fungus dance battle</li>
@@ -41,6 +76,7 @@
 
 
     <h2> Devblog 1: 1/28 to 2/11</h2>
+    <h3>Total Time: 24 hours</h3>
 
     <h3>Introduction</h3>
     <p>These first two weeks in Wolverinesoft were an interesting Introduction to what game development is like beyond normal class projects for me. Having completed EECS 494, I was familiar with Unity and C#, which were helpful in onboarding to the studio, but there were a lot of things and tools that I learned about for the first time within Wolverinesoft. So, these first two weeks I wasn't able to contribute to the project as much as I would like to since I had to learn some tools, like Wwise, that I had never used before that were confusing and deep. However, I am excited to put these tools to use in creating a game that is better than anything else I have made before.</p>
