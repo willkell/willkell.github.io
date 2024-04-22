@@ -1,6 +1,41 @@
 <html>
     <h1> The Blog of William Kelley from Wolverinesoft Game Studio!</h1>
 
+    <h2>Devblog 6: 4/7 to  4/21</h2>
+
+    <h3>Total Time: 24 hours</h3>
+
+    <h3>Wolverinesoft meeting: 2 hours: 4/14</h3>
+    <p>I couldn't go to the meeting on 4/7, so this is the only meeting I went to during this 2-week devblog period. This meeting was less than 1 week before the repo lock so this meeting was focused on last-minute testing and deciding what exactly can make it into the game at this point. Other than making a long list of things to implement on the audio side, the other thing that happened that was of note was I caused a bug within Wwise code that didn't cause anything to break when playing in Unity, but caused the build not to happen. I was lucky enough to fix it quickly since it was in some Wwise-provided code and it was just an #endif that was missing, but that was probably the worst bug I caused this semester and it was stressful to have it happen. </p>
+    <p>The other thing that was stressful about this week was I was unsure about the status of some portions of the game before this meeting or even during this meeting. During this meeting the audio team and I found out that the Town Hall was going to be part of the game when the status of it was unclear before that day. That made us scramble to think of something to put there when if we had more time we could have thought of something more complete. Ultimately, making the music quieter and putting a lowpass on it was just fine, but if we had more final art/a better concept at some time before the meeting we could have put more sound design into it I think.</p>
+
+    <h3>Sound Implementation: 22 hours</h3>
+    <p>Since these 2 weeks both basically had the same goals and there was just a big pile of things to do, this is really what I did for the vast majority of my time. So, I will split this time up by week and go into more detail by the sound by the week:</p>
+
+    <h4>Week 1: 4/7 to 4/14: 8 Hours</h4>
+    <h5>Heal Minigame SFX: 1 hour</h5>
+    <p>This task was to implement the sound effects in the minigame many enemies had which was that many flowers spawned many small orbs to heal the player. The most challenging thing in this implementation was finding where to put the SFX, since putting them in just the base game didn't make the sounds happen at all and I had to find the specific mingames for the specific enemies to make the SFX really play in all the minigames. Beyond that confusing design choice this task was reasonanly simple.</p>
+    <h5>Knight kneel SFX: 1 hour</h5>
+    <p>In the animation of the knight, we made a sound which happened when the knight kneels, and this task was to implement this task. The most interesting thing about this task is I learned how to implement positional sounds through this sound since we didn't want the player to hear the knight kneel sound when they are across the map. Though this works nicely and has a dedicated function in Wwise to do this, so it wasn't difficult to figure out once I knew which butons to click.</p>
+
+    <h4>Week 2: 4/14 to 4/21: 14 hours</h4>
+    <h5>Correct battle SFX: 6 hours</h5>
+    <p>For this part, I was tasked to make the correct damage sound happen whenever the enemy/a player was hit during battle. This did cause me to code a little bit since I thought the Player and Enemy had to make the same sound and wanted one source of truth that is easy to change. This was wrong. It is true that we want each mingame to have different enemy damage SFX but it wasn't true that we wanted the player to have the same SFX as the enemy. This is unfortunate since the hardest part of the project was figuring out how to make the player query the enemy profile to get the correct SFX at the beginning of battle. And then I got to delete all that code and now the implementation is a little bit too complicated on the enemy side. Oh well. In the future I will ask again if something seems weird, which that feature implementation definitely did. This also taught me that it is difficult to communicate precisely where a sound effect should go over text, and a picture or video is much nicer.</p>
+
+
+    <h2>Devblog 5: 3/24 to  4/7</h2>
+
+    <h3>Total Time: 24 hours</h3>
+
+    <h3>Wolverinesoft meetings: 4 hours: 3/24 and 3/31</h3>
+
+    <h3>New castle tracks: 10 hours</h3>
+
+    <h3>Adding Sound effects to the game through Wwise: 8 hours</h3>
+
+    <h3>Playtesting the game: 2 hours</h3>
+
+
     <h2>Devblog 4: 3/10 to  3/23</h2>
 
     <h3>Total Time: 24 hours</h3>
