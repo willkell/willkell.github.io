@@ -25,17 +25,21 @@
 
     <h5>Music Attenuation in Specific Scenes: 4 hours</h5>
     <p>The first instance of this was in the revisit during the town hall. We weren't sure the status of the town hall during the rest of development, but during the most recent meeting we discovered it would be in the game so we ultimately decided to make it quieter and put a low pass on it. This was something new to me, and though it was just an event that fired when you go in the town hall and leave the town hall it was still a new type of event for me.</p>
-     <video width="640" height="480" controls>
-  <source src="townhall-music-transition.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video>
+    <video width="640" height="480" controls>
+        <source src="townhall-music-transition.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+    </video>
     <p>The other is in the transition between the Village and the Forest. This wasn't quite the forest and wasn't quite the village, so we ultimately decided we wanted whatever music was there before to fade out as you walked toward the other area. There wasn't a great mechanism in Wwise to do this so I ended up writing a script that just set a parameter in Wwise to control how loud the music was depending on how far the player was from the point the player was at the start of the screen. Though it took a little configuring it wasn't hard in the end, once I figured out how to reset it when you leave the scene so it never happens that the music is stuck off.</p>
-    <p>Okay so about the video for this transition sound: I just tried to go get the video for this but it doesn't seem to work anymore. The RTPC I made for this seems to have been deleted which is a shame. I did this at some point on Friday so it must have been lost in Git. The repo lock has happened so I cannot make this change now. I will probably change this after the showcase.</p>
+    <p>Okay so about the video for the transition between Forest and Village: I just tried to go get the video for this but it doesn't seem to work anymore. The RTPC I made for this seems to have been deleted which is a shame. I did this at some point on Friday so it must have been lost in Git. The repo lock has happened so I cannot make this change now. I will probably change this after the showcase.</p>
 
     <h5>Make SFX fade in/out with visuals: 2 hours</h5>
     <p>There were a few places where the SFX were very loud when everything else was fading in, and this was jarring so I set out to fix it. The scariest part for me was making absolute sure the game would never save while the parameter made the SFX volume 0, making it so the player never heard any SFX, or that somehow the value would be stuck at 0 some other way. Luckily the save/loader seemed to be well-implemented in this aspect so that hasn't happened yet. But it might still, who knows.</p>
     <h5>Implement Prologue and Credits music: 2 hours</h5>
     <p>Even though the epilogue/credits wasn't ready until very close to the repo lock, there still needed to be music in there so I had to do it on Friday evening. However, the infrastructure I set up earlier in the semester with music transitions helped make this quick and easy, which was super awesome. Basically this paragraph is here so I can pat myself on the back for doing a good music transition system.</p>
+    <video width="640" height="480" controls>
+        <source src="startgame.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+    </video>
 
     <h5>Other SFX: 6 hours</h5>
     <p>This is a list of things that weren't quite substantial enough to make it into other sections. These were interesting in that I had to learn how lots of different parts of the codebase worked, but none of them required a lot of effort to implement.</p>
