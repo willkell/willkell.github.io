@@ -25,6 +25,10 @@
 
     <h5>Music Attenuation in Specific Scenes: 4 hours</h5>
     <p>The first instance of this was in the revisit during the town hall. We weren't sure the status of the town hall during the rest of development, but during the most recent meeting we discovered it would be in the game so we ultimately decided to make it quieter and put a low pass on it. This was something new to me, and though it was just an event that fired when you go in the town hall and leave the town hall it was still a new type of event for me.</p>
+     <video width="640" height="480" controls>
+  <source src="townhall-music-transition.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
     <p>The other is in the transition between the Village and the Forest. This wasn't quite the forest and wasn't quite the village, so we ultimately decided we wanted whatever music was there before to fade out as you walked toward the other area. There wasn't a great mechanism in Wwise to do this so I ended up writing a script that just set a parameter in Wwise to control how loud the music was depending on how far the player was from the point the player was at the start of the screen. Though it took a little configuring it wasn't hard in the end, once I figured out how to reset it when you leave the scene so it never happens that the music is stuck off.</p>
     <p>Okay so about the video for this transition sound: I just tried to go get the video for this but it doesn't seem to work anymore. The RTPC I made for this seems to have been deleted which is a shame. I did this at some point on Friday so it must have been lost in Git. The repo lock has happened so I cannot make this change now. I will probably change this after the showcase.</p>
 
